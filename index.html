@@ -1,9 +1,126 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8" />
-<title>Hello world </title>
+<head>
+    <meta charset="utf-8" />
+    <title>Sunjoo Park (all4dich)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f0f2f5;
+            color: #333;
+        }
+        .container {
+            max-width: 960px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .profile-name {
+            font-size: 2em;
+            margin: 0;
+        }
+        .profile-title {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .profile-location {
+            font-size: 1em;
+            color: #777;
+        }
+        .social-links {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .social-links a {
+            font-size: 1.5em;
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .repo-list {
+            list-style: none;
+            padding: 0;
+        }
+        .repo-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .repo-item h3 {
+            margin: 0 0 5px 0;
+        }
+        .repo-item p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-Hello World
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://github.com/all4dich.png" alt="Sunjoo Park" class="profile-img">
+            <h1 class="profile-name">Sunjoo Park</h1>
+            <div class="profile-title">Build/Release & Automation Engineer</div>
+            <div class="profile-location"><i class="fas fa-map-marker-alt"></i> Sunnyvale</div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/all4dich" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://all4dich.wordpress.com/" target="_blank" title="Blog"><i class="fas fa-blog"></i></a>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Pinned Repositories</h2>
+            <div id="repos" class="repo-list"></div>
+        </div>
+    </div>
+
+    <script>
+        const repos = [
+            { name: "golang-examples", description: "Go examples" },
+            { name: "robotframework-jenkins-plugin", description: "Robot Framework plugin for Jenkins" },
+            { name: "meta-iot-cloud", description: "Yocto layer for IoT cloud services" }
+        ];
+
+        const reposContainer = document.getElementById('repos');
+        let reposHTML = '';
+        repos.forEach(repo => {
+            reposHTML += `
+                <div class="repo-item">
+                    <h3><a href="https://github.com/all4dich/${repo.name}" target="_blank">${repo.name}</a></h3>
+                    <p>${repo.description}</p>
+                </div>
+            `;
+        });
+        reposContainer.innerHTML = reposHTML;
+    </script>
 </body>
 </html>

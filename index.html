@@ -104,23 +104,24 @@
     </div>
 
     <script>
-        const repos = [
-            { name: "golang-examples", description: "Go examples" },
-            { name: "robotframework-jenkins-plugin", description: "Robot Framework plugin for Jenkins" },
-            { name: "meta-iot-cloud", description: "Yocto layer for IoT cloud services" }
-        ];
+       const repos = [
+             { name: "golang", description: "Go examples" },
+             { name: "infra-playbooks", description: "Infrastructure Management Materials" },
+             { name: "openembedded-core", description: "Layer containing the core metadata for current versions of OpenEmbedded." },
+             { name: "dev_env_init", description: "IaC repository for constructing various development environment" }
+         ];
 
-        const reposContainer = document.getElementById('repos');
-        let reposHTML = '';
-        repos.forEach(repo => {
-            reposHTML += `
-                <div class="repo-item">
-                    <h3><a href="https://github.com/all4dich/${repo.name}" target="_blank">${repo.name}</a></h3>
-                    <p>${repo.description}</p>
-                </div>
-            `;
-        });
-        reposContainer.innerHTML = reposHTML;
+       const reposContainer = document.getElementById('repos');
+       let reposHTML = '';
+       repos.forEach(repo => {
+             reposHTML += `
+                 <div class="repo-item">
+                     <h3><a href="https://github.com/all4dich/${repo.name}" target="_blank">${repo.name}</a></h3>
+                     <p>${repo.description}</p>
+                 </div>
+               `;
+         });
+       reposContainer.innerHTML = reposHTML;
     </script>
 </body>
 </html>

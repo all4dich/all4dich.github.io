@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lens Simulator</h1>
+        <div class="simulator-wrapper">
+            <canvas id="simulatorCanvas" width="1200" height="600"></canvas>
+            <div id="ruler" class="ruler"></div>
+        </div>
+        <div class="controls">
+            <div class="control-group">
+                <h3>Light Source</h3>
+                <label>Position: <input type="range" id="lightPosition" min="0" max="1000" value="100"></label>
+                <label>Intensity: <input type="range" id="lightIntensity" min="0" max="100" value="80"></label>
+            </div>
+            <div class="control-group">
+                <h3>Lenses</h3>
+                <button id="addLens">Add Lens</button>
+                <div id="lensControls"></div>
+            </div>
+            <div class="control-group">
+                <h3>Screen</h3>
+                <label>Position: <input type="range" id="screenPosition" min="600" max="1100" value="900"></label>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
